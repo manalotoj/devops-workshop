@@ -1,0 +1,27 @@
+{
+  "if": {
+    "allOf": [
+     {   
+       "not": {
+          "field": "tags['environment']",
+          "equals": "development"
+        }
+      },
+      {   
+        "not": {
+           "field": "tags['environment']",
+           "equals": "staging"
+         }
+       },
+       {   
+        "not": {
+           "field": "tags['environment']",
+           "equals": "production"
+         }
+       }             
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}

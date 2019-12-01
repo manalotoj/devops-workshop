@@ -1,0 +1,14 @@
+{
+  "listOfAllowedSKUs": {
+    "value": [
+      "standard_ds3_v2",
+      "standard_ds3_v2_promo",
+      "standard_d2s_v3",
+      "standard_ds1_v2",
+      "standard_ds2_v2",
+      "standard_ds2_v2_promo",
+      "standard_b1s",
+      "standard_b2s"
+    ]
+  }
+}
