@@ -3,25 +3,25 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmName":{
-      "value": "be-vm"
+      "value": "vm-name"
     },
     "location":{
       "value": "westus2"
     },
     "VSTSAccountName":{
-      "value": "johnmanaloto"
+      "value": "account-name"
     },
     "TeamProject":{
-      "value": "containers-workshop"
+      "value": "team-project"
     },
     "DeploymentGroup":{
-      "value": "devops-workshop"
+      "value": "deployment-workgroup-name"
     },
     "PATToken":{
-      "value": "s57towbcqs2liu3dd3wzzwy4wiydt3mskexyf4zybqbqc4aq6pma"
+      "value": "personal-access-token"
     },
     "Tags":{
-      "value": "<specify-frontend-or-middletier-or-backend"
+      "value": "specify-frontend-or-middletier-or-backend"
     }
   }
 }
