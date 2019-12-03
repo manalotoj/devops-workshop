@@ -107,11 +107,11 @@ resource "random_string" "rnd" {
 	    access_key            = "<access-key>"
 	  }
 	}
-``` azcli
-Retrieve the storage access key from the portal or via script:
 ```
+Retrieve the storage access key from the portal or via script:
+``` azcli 
 az storage account keys list -g <resoure-group-name> -n <storage-account-name>
-``` azcli
+```
 5. Add a resource group named dev-main-<random suffix> as shown:
 ``` terraform
 resource "azurerm_resource_group" "main" {
