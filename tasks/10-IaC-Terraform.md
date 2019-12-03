@@ -25,7 +25,7 @@ resource "azurerm_resource_group" "base" {
 }
 ```
 5. In a command shell, run the following scripts and observer the output and results after each line. 
-```terraform
+``` terraform
 terraform init
 
 terraform plan
@@ -45,7 +45,7 @@ Terraform currently lacks the ability to fully reverse engineer existing infrast
      - replication	locally-redundant storage (LRS)
 	
 2. Modify main.tf by appending the following resource:
-```terraform
+``` terraform
 	resource "azurerm_storage_account" "import" {
 	  name                      = "statestore[your-initials]"
 	  resource_group_name       = "${azurerm_resource_group.main.name}"
@@ -87,7 +87,7 @@ az storage container create --account-name <storage-account-name> --name state-s
 
 2. In your repository, create folder named main at the same level as the base folder and create a file named main.tf
 3. Add a random string generator configuration. This will be used as a suffix to make service names unique.
-```
+``` terraform
 resource "random_string" "rnd" {
   length    = 4
   special   = false
@@ -97,7 +97,7 @@ resource "random_string" "rnd" {
 ```
 
 4. Save tf state in the previously created Azure storage account using the following:
-```
+``` terraform
 	terraform {
 	  required_version = ">=0.12"
 	  backend "azurerm" {
@@ -109,11 +109,11 @@ resource "random_string" "rnd" {
 	}
 ```
 Retrieve the storage access key from the portal or via script:
-```
+``` azcli
 az storage account keys list -g <resoure-group-name> -n <storage-account-name>
-```
+``` azcli
 5. Add a resource group named dev-main-<random suffix> as shown:
-```
+``` terraform
 resource "azurerm_resource_group" "main" {
   name     = "dev-main-${random_string.rnd.result}"
   location = "westus2"
@@ -133,7 +133,7 @@ resource "azurerm_resource_group" "main" {
   - backend-subnet cidr: 10.0.3.0/24
 
 Use the following general configuration for reference.
-```
+``` terraform
 	resource "azurerm_virtual_network" "vnet" {
 	  name                = "<vnet-name>"
 	  location            = azurerm_resource_group.main.location
@@ -164,7 +164,7 @@ Use the following general configuration for reference.
   - No inbound traffic will be permitted to the backend subnet
 
 Use the following general NSG configuration for reference:
-```
+``` terraform
 	resource "azurerm_network_security_group" "default" {
 	  name                = "<nsg-name>"
 	  location            = azurerm_resource_group.test.location
@@ -203,7 +203,7 @@ TODO: add link to winvm.tf file
 	- Create a configuration file that will deploy a jumpbox into the management-subnet. 
 
 12. In a command shell, run the following scripts and observer the output and results after each line. You may have to repeat ***terraform plan*** and/or ***terraform apply*** if you run into any issues.
-```terraform
+``` terraform
 terraform init
 
 terraform plan
