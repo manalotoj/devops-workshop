@@ -31,10 +31,12 @@ In practice, you would achieve this task using either ARM templates or Terraform
 		- Add an artifact and select the previously created build; accept all defaults and click Add.
 		- Rename "Stage 1" to "Development".
 4. Add the following pipeline variables:
+
     | Variable Name | Value                 | Scope       |
     | ------------- | --------------------- | ----------- |
     | sqlPassword   | \<your-sql-password\> | Development |
     | sqlUsername   | \<your-sql-username>  | Developemnt |
+
 - Click the lock icon on the sqlPassword to secure its value. In practice, this can be secured using [variable groups](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml) Azure KeyVault.
 
 5. Add an "Azure App Service deploy" task for the web API. Set the following properties:
