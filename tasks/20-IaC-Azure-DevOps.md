@@ -5,7 +5,6 @@ In this section, you will use Azure DevOps to create CICD pipelines to build and
 1. Within your Azure DevOps project, hover over the Pipelines icon and select Builds.
 2. When prompted with "Where is your code?", you have an option to use a YAML build, or, at the very bottom, "Use the classic editor…" to create a pipeline without YAML. Unless you are familiar with pipelines, choose the latter option.
 3. In "Select a source", accept the defaults which will be:
-
 - Azure Repos Git
 - Team project: the project you created
 - Repository: the default repository within the project
