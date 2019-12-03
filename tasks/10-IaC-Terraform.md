@@ -32,7 +32,7 @@ terraform plan
 
 terraform apply --auto-approve
 ```
-if using VS Code, follow instructions from https://docs.microsoft.com/en-us/azure/terraform/terraform-vscode-extension.
+if using VS Code, follow instructions from https://docs.microsoft.com/en-us/azure/terraform/terraform-vscode-extension - you only have to follow steps 1-4 under *Install the Azure Terraform Visual Studio Code extension*.
 5.. Delete the resource group by running terraform destroy. Observe the output verify the results.
 6. Recreate the resource group by running terraform apply --auto-approve. Observe the output and verify the results. 
 
