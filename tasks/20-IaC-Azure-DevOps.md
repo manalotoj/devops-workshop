@@ -74,8 +74,9 @@ In this task, you will add a staging environment to your release pipeline. You w
 1. disable continuous integration trigger for your build pipeline (or one will be triggered each time you push changes)
 
 2. create file named variables.tfvars in the root folder of your terraform scripts. Add the below contents, then tsave, commit, and push to repo.
+``` terraform
 	environment = "__environment__"
-
+```
 3. make the following changes in main.tf (this will tokenize the environment for the state store):
 
 ```terraform
