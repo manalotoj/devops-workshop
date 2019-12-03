@@ -1,6 +1,5 @@
 ## Terraform and Azure DevOps Hands-On
-
-[TODO: write intro]
+In this section, you will use Azure DevOps to create CICD pipelines to build and deploy the Terraform configurations you created in the previous section. 
 
 ### Task1: Create a build pipeline
 1. Within your Azure DevOps project, hover over the Pipelines icon and select Builds.
