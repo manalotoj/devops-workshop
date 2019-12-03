@@ -77,6 +77,8 @@ In this task, you will create a 3-tier IaaS environment consisting of the follow
 
 In this task, we will maintain tf state in the Azure storage account created in Task 2.
 
+**Note:** In your command terminal, make sure you navigate to ../tf/main before running any Terraform commands.
+
 1. Use the following Azure CLI script to create containers.
 
 ```
