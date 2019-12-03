@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName":{
+      "value": "be-vm"
+    },
+    "location":{
+      "value": "westus2"
+    },
+    "VSTSAccountName":{
+      "value": "johnmanaloto"
+    },
+    "TeamProject":{
+      "value": "containers-workshop"
+    },
+    "DeploymentGroup":{
+      "value": "devops-workshop"
+    },
+    "PATToken":{
+      "value": "s57towbcqs2liu3dd3wzzwy4wiydt3mskexyf4zybqbqc4aq6pma"
+    },
+    "Tags":{
+      "value": "<specify-frontend-or-middletier-or-backend"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "type": "string",
+      "metadata": {
+          "description": "description"
+      }
+    },
+    "location": {
+      "type": "string",
+      "metadata": {
+          "description": "description"
+      }
+    },
+    "VSTSAccountName": {
+      "type": "string",
+      "metadata": {
+          "description": "description"
+      }
+    },
+    "TeamProject": {
+      "type": "string",
+      "metadata": {
+          "description": "description"
+      }
+    },
+    "DeploymentGroup": {
+      "type": "string",
+      "metadata": {
+          "description": "description"
+      }
+    },
+    "PATToken": {
+      "type": "string",
+      "metadata": {
+          "description": "description"
+      }
+    },
+    "Tags":{
+      "type": "string"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "name": "[concat(parameters('vmName'),'/TeamServicesAgent')]",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "location": "[parameters('location')]",
+      "apiVersion": "2015-06-15",
+      "properties": {
+        "publisher": "Microsoft.VisualStudio.Services",
+        "type": "TeamServicesAgent",
+        "typeHandlerVersion": "1.0",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "VSTSAccountName": "[parameters('VSTSAccountName')]",
+          "TeamProject": "[parameters('TeamProject')]",
+          "DeploymentGroup": "[parameters('DeploymentGroup')]",
+          "AgentName": "[parameters('vmName')]",
+          "Tags": "[parameters('Tags')]"
+        },
+        "protectedSettings": {
+        "PATToken": "[parameters('PATToken')]"
+        }
+      }
+    }
+  ],
+  "outputs": {},
+  "functions": []
+}
